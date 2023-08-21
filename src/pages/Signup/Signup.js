@@ -44,7 +44,26 @@ const Signup = ({ setSignupModalOpen }) => {
 
   const isInputValid = Object.values(conditions).every(v => v);
 
+  //   const isValidEmail = inputValue.email.includes('@', 5) &&
+  //   inputValue.email.includes('.', 9) ||
+  //   inputValue.email.length === 0;
+
+  // const isValidPassword = inputValue.password.length > 5 || inputValue.password.length === 0;
+
+  // const isInputValid = isValidEmail && isValidPassword;
+
   const isAllValid = isInputValid && checkList.every(({ checked }) => checked);
+
+  // const areAllChecked = () => {
+  //   for (let item of checkList) {
+  //     if (!item.checked) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // };
+
+  // const isAllValid = isInputValid && areAllChecked();
 
   const handleSubmit = () => {
     fetch(APIS.signup, {
@@ -129,7 +148,7 @@ const Signup = ({ setSignupModalOpen }) => {
           })}
 
           <div className="signUpChkBx">
-            <div>
+            {/* <div>
               {checkList.map(info => (
                 <Checkbox
                   id={info.id}
@@ -140,7 +159,7 @@ const Signup = ({ setSignupModalOpen }) => {
                   toggleCheck={toggleCheck}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
           <div className="finalSignInBtn">
             <button
